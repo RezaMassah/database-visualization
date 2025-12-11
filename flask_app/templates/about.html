@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Flask Project{% endblock %}
+
+{% block content %}
+    <style>
+        /* Styling for the About Page */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .about-section {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
+    </style>
+
+    <!-- <h1>About This Project</h1> -->
+
+    <div class="about-section">
+        <p>
+            Welcome to the Flask Project! This application is designed to demonstrate the capabilities of Flask, 
+            a lightweight and powerful web framework for Python. The project serves as a foundation for building 
+            dynamic and data-driven web applications with simplicity and flexibility.
+        </p>
+        <p>
+            The main objectives of this project include providing a clean structure, incorporating file uploads, 
+            database interactions, and showcasing dynamic content rendering. It aims to help users manage data efficiently 
+            while learning key principles of web development with Flask.
+        </p>
+        <p>
+            Developed and maintained by <strong>Reza Massah</strong>, this project reflects a commitment to delivering 
+            user-friendly solutions and promoting learning through real-world applications.
+        </p>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <p>&copy; 2024 Flask Project</p>
+{% endblock %}

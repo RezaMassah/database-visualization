@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up - Flask Project{% endblock %}
+
+{% block content %}
+    <style>
+        /* Centered Form Container */
+        .signup-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .signup-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .signup-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .signup-container input:focus {
+            border-color: #6c63ff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+        }
+
+        /* Submit Button */
+        .signup-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6c63ff;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .signup-container button:hover {
+            background-color: #5548e6;
+            transform: scale(1.02);
+        }
+
+        /* Links */
+        .signup-container .links {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-container a {
+            color: #6c63ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .signup-container a:hover {
+            color: #5548e6;
+        }
+    </style>
+
+    <!-- Display the Error Message -->
+    {% if message %}
+        <div class="alert alert-{{ category }}" style="color: red; text-align: center;">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form action='/creating_account' method="POST">
+            <!-- First Name -->
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
+
+            <!-- Last Name -->
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required>
+
+            <!-- Username -->
+            <label for="username">Username</label>
+            <input type="username" id="username" name="username" placeholder="Enter your username" required>
+
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <!-- Re-enter Password -->
+            <label for="re_password">Re-enter Password</label>
+            <input type="password" id="re_password" name="re_password" placeholder="Re-enter your password" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Create Account</button>
+        </form>
+
+        <!-- Redirect to Log In -->
+        <div class="links">
+            <p>Already have an account? <a href='/log_in'>Log in here</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <p>&copy; 2024 Flask Project</p>
+{% endblock %}

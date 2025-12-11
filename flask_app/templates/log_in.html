@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In - Flask Project{% endblock %}
+
+{% block content %}
+    <style>
+        /* Centered Form Container */
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        .login-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container input:focus {
+            border-color: #6c63ff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+        }
+
+        /* Submit Button */
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6c63ff;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #5548e6;
+            transform: scale(1.02);
+        }
+
+        /* Links */
+        .login-container .links {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-container a {
+            color: #6c63ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .login-container a:hover {
+            color: #5548e6;
+        }
+    </style>
+
+    <div class="login-container">
+        <h1>Log In</h1>
+        <p>Please enter your credentials to log in.</p>
+
+        <!-- Display the Error Message -->
+        {% if message %}
+            <div class="alert alert-{{ category }}" style="color: red; text-align: center;">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <!-- Login Form -->
+        <form action='log_in' method="POST" autocomplete="off">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" autocomplete="off" required>
+        
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="off" required>
+        
+            <button type="submit">Log In</button>
+        </form>
+        
+
+        <div class="links">
+            <p>Don't have an account? <a href="/sign_up">Sign up here</a></p>
+            <p><a href="#">Forgot password?</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <p>&copy; 2024 Flask Project</p>
+{% endblock %}

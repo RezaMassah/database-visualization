@@ -1,0 +1,68 @@
+/* Ensures the page and body take up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Makes the body a flex container */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: #007bff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Ensures content grows to push footer down if the content height is small */
+.content {
+    flex: 1; /* Takes up remaining space */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+/* Footer stays at the bottom */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    border-top: 2px solid #0056b3;
+}
